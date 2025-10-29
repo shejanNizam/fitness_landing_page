@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CHeading from "./CHeading";
+import CParagraph from "./CParagraph";
 
 const plans = [
   {
@@ -43,10 +44,8 @@ function PlanCard({ plan, isSelected, onSelect }) {
       <div className="flex items-center justify-between">
         <div>
           <p className="text-lg font-bold text-gray-800">{plan.duration}</p>
-
           <p className="text-sm text-gray-500">{plan.price}</p>
         </div>
-
         <div
           className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors duration-200 
             ${isSelected ? "border-red-700 bg-white" : "border-gray-400"}`}
@@ -64,11 +63,20 @@ export default function GetPersonalPlan() {
   const [selectedPlan, setSelectedPlan] = useState("3month");
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-50 p-4 sm:p-8">
+    <div className="flex flex-col items-center bg-gray-50 p-4 sm:p-8">
       <CHeading text="Get your personal plan..." />
+      <div className="md:w-[60%] xl:w-[40%] mx-auto my-2">
+        <CParagraph
+          text="A subscription plan offers access to exclusive features or services for
+        a set period. By purchasing a plan, users can enjoy continuous benefits,
+        updates, and premium content at a fixed price. It's a convenient way to
+        ensure ongoing access without the need for frequent renewals or
+        payments."
+        />
+      </div>
 
       <div className="w-full max-w-md mx-auto">
-        {plans.map((plan) => (
+        {plans?.map((plan) => (
           <PlanCard
             key={plan.id}
             plan={plan}
@@ -77,18 +85,10 @@ export default function GetPersonalPlan() {
           />
         ))}
 
-        <button className="w-full mt-4 py-3 bg-red-700 text-white font-bold text-lg rounded-xl shadow-lg hover:bg-red-800 transition-colors duration-200 cursor-pointer">
+        <button className="w-full mt-4 py-3 bg-[#A50015] text-white font-bold text-lg rounded-xl shadow-lg hover:bg-red-700 transition-colors duration-200 cursor-pointer">
           Purchase now
         </button>
       </div>
-
-      <p className="w-full max-w-lg mt-8 text-sm text-center leading-relaxed">
-        A subscription plan offers access to exclusive features or services for
-        a set period. By purchasing a plan, users can enjoy continuous benefits,
-        updates, and premium content at a fixed price. It's a convenient way to
-        ensure ongoing access without the need for frequent renewals or
-        payments.
-      </p>
     </div>
   );
 }
