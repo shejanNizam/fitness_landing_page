@@ -1,23 +1,22 @@
 "use client";
+
+import Link from "next/link";
+
 const crimsonColor = "bg-red-800";
 const crimsonRing = "ring-red-300";
 
 export default function Navbar() {
   return (
-    // Outer container for centering the entire bar
     <div className="w-full py-6 px-4 flex justify-center bg-gray-50 font-sans">
-      {/* Navbar Content Container - Matches the rounded, bordered bar */}
       <nav
         className={`w-full max-w-4xl p-2 rounded-full border-2 ${crimsonColor} border-opacity-70 shadow-lg bg-white`}
       >
         <div className="flex items-center justify-between h-14 px-4">
-          {/* Logo Section */}
           <div className="flex items-center space-x-2">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="flex flex-col items-center leading-none group"
             >
-              {/* Simple Triangle Logo (Inline SVG) */}
               <svg
                 width="20"
                 height="20"
@@ -31,10 +30,9 @@ export default function Navbar() {
               <span className="text-xs font-semibold uppercase text-gray-700 tracking-widest mt-0.5">
                 ThePeak
               </span>
-            </a>
+            </Link>
           </div>
 
-          {/* Sign In Button */}
           <div>
             <button
               onClick={() => console.log("Sign In clicked")}
