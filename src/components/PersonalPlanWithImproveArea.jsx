@@ -1,6 +1,8 @@
 import Image from "next/image";
 import imageTwo from "../assets/personal_plan/after_perfomance.png";
 import imageOne from "../assets/personal_plan/before_perfomance.png";
+import CHeading from "./CHeading";
+import CSubHeading from "./CSubHeading";
 
 const performanceData = [
   {
@@ -22,7 +24,7 @@ const performanceData = [
 const improvementAreas = [
   {
     _id: "erectile",
-    icon: "♂", // Simple icon placeholders
+    icon: "♂",
     area: "Erectile function",
   },
   {
@@ -47,19 +49,13 @@ const improvementAreas = [
   },
 ];
 
-// --- Component ---
-
 export default function PersonalPlanWithImproveArea() {
   return (
     <div className="flex flex-col items-center p-4 sm:p-8 bg-white font-sans">
-      {/* Title */}
-      <h2 className="text-2xl font-bold mb-8 text-gray-800 text-center">
-        Your personal plan is ready
-      </h2>
+      <CHeading text="Your personal plan is ready" />
 
-      {/* Performance Cards Container (Responsive) */}
       <div className="flex flex-col lg:flex-row gap-6 w-full max-w-3xl mb-12">
-        {performanceData.map((item) => (
+        {performanceData?.map((item) => (
           <div
             key={item._id}
             className="flex-1 rounded-lg shadow-xl overflow-hidden bg-gray-50"
@@ -73,14 +69,14 @@ export default function PersonalPlanWithImproveArea() {
             </div>
 
             <div className="p-4 flex flex-col items-center justify-center text-center">
-              <p className="w-[50%] mx-auto font-semibold mb-3">{item.title}</p>
-              {/* Indicator Dots */}
-              <div className="flex gap-1.5">
-                {/* Create 3 dots based on the design */}
+              <div className="w-[50%] mx-auto">
+                <CSubHeading text={item.title} />
+              </div>
+              <div className="flex gap-1.5 mt-2">
                 {[...Array(3)].map((_, i) => (
                   <span
                     key={i}
-                    className={`w-8 h-3 rounded-full ${item.design}`}
+                    className={`w-8 h-2 rounded-full ${item.design}`}
                   ></span>
                 ))}
               </div>
@@ -91,31 +87,25 @@ export default function PersonalPlanWithImproveArea() {
 
       <div className="w-full max-w-4xl border-t border-gray-200 my-4"></div>
 
-      {/*  */}
-      {/* Areas of Improvement Section */}
+      {/* area of improvement */}
       <div className="w-full max-w-4xl mt-6 p-4">
-        <h3 className="text-2xl font-bold mb-8 text-center text-gray-700">
-          Key Areas of Improvement
-        </h3>
+        <CHeading text="Key Areas of Improvement" />
 
-        {/* The list container is now centered and items are always centered */}
         <div className="space-y-6 flex flex-col items-center">
           {improvementAreas.map((item) => (
             <div
               key={item._id}
-              // FIX: Removed sm:mx-0 to keep mx-auto active on all screen sizes, centering the item
-              className="flex items-center w-full max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow-md transition duration-200 hover:shadow-lg hover:border-blue-300"
+              className="flex items-center w-full max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow-md transition duration-200 hover:shadow-lg hover:border-[#A50015] "
             >
-              {/* Icon container */}
               <span className="text-2xl mr-4 flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full">
                 {item.icon}
               </span>
-              <p className="text-lg font-medium text-gray-700">{item.area}</p>
+
+              <CSubHeading text={item.area} className="m-0" />
             </div>
           ))}
         </div>
       </div>
-      {/*  */}
     </div>
   );
 }

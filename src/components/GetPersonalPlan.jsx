@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import CHeading from "./CHeading";
 
 const plans = [
   {
@@ -64,9 +65,7 @@ export default function GetPersonalPlan() {
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-50 p-4 sm:p-8">
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 text-center mb-8">
-        Get your personal plan...
-      </h2>
+      <CHeading text="Get your personal plan..." />
 
       <div className="w-full max-w-md mx-auto">
         {plans.map((plan) => (
