@@ -1,13 +1,13 @@
 import Image from "next/image";
 import image from "../assets/improvement/expect_improvement.png";
+import CHeading from "./CHeading";
+import CParagraph from "./CParagraph";
 
 export default function ExpectImprove() {
   return (
     <>
-      <h2 className="text-3xl font-bold my-4">When to expect improvements</h2>
-      <p className="my-4">
-        Based on your data you can reach noticeable improvements
-      </p>
+      <CHeading text="When to expect improvements" />
+      <CParagraph text="Based on your data you can reach noticeable improvements" />
       <Image
         src={image}
         alt="expect_improvement"

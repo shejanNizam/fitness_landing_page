@@ -1,6 +1,5 @@
 import Image from "next/image";
 import image from "../assets/rating_review/ratings.png";
-// --- Data Structure ---
 
 const testimonialsData = [
   {
@@ -25,9 +24,6 @@ const testimonialsData = [
   },
 ];
 
-// --- Helper Components ---
-
-// Component for a single star icon
 const StarIcon = ({ fill = true }) => (
   <svg
     className={`w-4 h-4 ${fill ? "text-yellow-500" : "text-gray-300"}`}
@@ -38,7 +34,6 @@ const StarIcon = ({ fill = true }) => (
   </svg>
 );
 
-// Component to render the star rating
 const RatingStars = ({ rating }) => (
   <div className="flex">
     {[...Array(5)].map((_, i) => (
@@ -47,13 +42,10 @@ const RatingStars = ({ rating }) => (
   </div>
 );
 
-// --- Main Component ---
-
 export default function RatingWithSuccess() {
   return (
     <div className="bg-gray-50 py-12 sm:py-20 font-sans">
       <div className="max-w-4xl mx-auto px-4">
-        {/* Top Section: Rating and Trust */}
         <Image src={image} alt="rating_image" className="mb-8" />
 
         {/* Title */}
@@ -62,24 +54,18 @@ export default function RatingWithSuccess() {
           our clients !!!
         </h2>
 
-        {/* Testimonials List */}
         <div className="space-y-6">
           {testimonialsData.map((testimonial) => (
             <div
               key={testimonial._id}
               className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
             >
-              {/* Rating */}
               <div className="mb-2">
                 <RatingStars rating={testimonial.rating} />
               </div>
-
-              {/* Name */}
               <h4 className="text-lg font-bold text-gray-800 mb-1">
                 {testimonial.name}
               </h4>
-
-              {/* Review Text */}
               <p className="text-sm text-gray-600">{testimonial.review}</p>
             </div>
           ))}
