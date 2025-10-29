@@ -1,50 +1,43 @@
 import Image from "next/image";
+import Link from "next/link";
 import image from "../assets/download_now/phone.png";
+import CHeading from "./CHeading";
+import CParagraph from "./CParagraph";
+import CSubHeading from "./CSubHeading";
 
 export default function DownloadNow() {
   return (
     <div className="flex flex-col items-center py-16 bg-white font-sans text-gray-800">
-      {/* Main Title */}
-      <h2 className="text-4xl font-extrabold mb-12 text-center">
-        Download Now
-      </h2>
+      <CHeading text="Download Now" />
 
       <div className="flex flex-col lg:flex-row items-center justify-center gap-12 w-full max-w-6xl px-4">
-        {/* Left Section: Phone Mockups - These are now treated as background images or direct image assets */}
         <div className="relative flex justify-center lg:justify-end w-full lg:w-1/2 min-h-[500px] sm:min-h-[550px] lg:min-h-[560px]">
           <Image src={image} alt="double_phone_image" />
         </div>
 
-        {/* Right Section: QR Code, Text, and App Store Links */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-1/2 max-w-md lg:max-w-none px-4 lg:px-0">
-          {/* QR Code */}
           <div className="mb-6 flex flex-col items-center">
-            {/* Placeholder for QR Code - you can generate one online or replace with your asset */}
+            {/* modify later */}
             <img
               src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://your-app-link.com"
               alt="QR Code to download app"
-              className="w-32 h-32 mb-2 bg-gray-200" // bg-gray-200 is a fallback if the QR code fails to load
+              className="w-32 h-32 mb-2 bg-gray-200"
             />
-            <p className="text-sm text-gray-600">Scan me for download</p>
+            <CParagraph text="Scan me for download" />
           </div>
 
-          {/* Main Call to Action Text */}
-          <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 leading-tight">
-            Download the App and Find Your <br className="hidden sm:inline" />
-            Perfect Job Today
-          </h3>
-
-          {/* Description */}
-          <p className="text-base text-gray-600 mb-8">
-            Available on iOS and Android. Start your journey towards a
-            fulfilling career in just a few taps!
-          </p>
-
-          {/* App Store Badges - These are now using the correct SVG URLs */}
+          <div className="w-[70%]">
+            <CSubHeading text="Download the App and Find Your Perfect Job Today" />
+          </div>
+          <div className="my-4">
+            <CParagraph
+              text="Available on iOS and Android. Start your journey towards a
+            fulfilling career in just a few taps!"
+            />
+          </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            {/* Google Play Button */}
-            <a
-              href="#"
+            <Link
+              href="/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
@@ -54,11 +47,10 @@ export default function DownloadNow() {
                 alt="Get it on Google Play"
                 className="h-12 w-auto"
               />
-            </a>
+            </Link>
 
-            {/* Apple App Store Button */}
-            <a
-              href="#"
+            <Link
+              href="/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
@@ -68,7 +60,7 @@ export default function DownloadNow() {
                 alt="Download on the Apple App Store"
                 className="h-12 w-auto"
               />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
