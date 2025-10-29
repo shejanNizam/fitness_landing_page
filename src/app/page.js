@@ -15,16 +15,6 @@ export default function Home() {
       <GetPersonalPlan />
       <RestorePurchase />
       <DownloadNow />
-
-      {/* 
-      PersonalPlanWithImproveArea
-      ExpectImprove
-      GetPersonalPlan  ==1
-      RatingWithSuccess
-      GetPersonalPlan  ==2
-      RestorePurchase
-      DownloadNow    
-      */}
     </>
   );
 }
