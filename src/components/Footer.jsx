@@ -3,6 +3,7 @@ import CParagraph from "./CParagraph";
 import CSubHeading from "./CSubHeading";
 
 const unityPages = [
+  { name: "Home", href: "/" },
   { name: "About us", href: "/about" },
   { name: "Privacy Policy", href: "/privacy" },
   { name: "Terms & Condition", href: "/terms" },
