@@ -21,8 +21,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
           <div className="md:col-span-2 space-y-4">
             <div className="flex justify-center md:justify-start items-center space-x-2">
-              <span className="text-3xl text-white">△</span>
-              <CSubHeading text="THEPEAK" />
+              <Link
+                href="/"
+                className="flex flex-col items-center leading-none group text-white"
+              >
+                {/* <Image
+                  src={main_logo}
+                  alt="main_logo"
+                  width={1000}
+                  height={1000}
+                  className="w-12 h-12"
+                /> */}
+                <span className="text-3xl text-white">△</span>
+                <CSubHeading text="THEPEAK" />
+              </Link>
             </div>
 
             <CParagraph
