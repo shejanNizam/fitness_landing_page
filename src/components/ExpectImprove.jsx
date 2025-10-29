@@ -7,7 +7,9 @@ export default function ExpectImprove() {
   return (
     <>
       <CHeading text="When to expect improvements" />
-      <CParagraph text="Based on your data you can reach noticeable improvements" />
+      <div className="text-center">
+        <CParagraph text="Based on your data you can reach noticeable improvements" />
+      </div>
       <Image
         src={image}
         alt="expect_improvement"

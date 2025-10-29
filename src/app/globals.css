@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.no-tailwind * {
+  all: revert !important;
+}
+
 @theme inline {
   --color-primary: "#A50015";
   --color-background: var(--background);
