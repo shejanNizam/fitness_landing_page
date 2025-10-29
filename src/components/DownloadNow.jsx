@@ -19,7 +19,7 @@ export default function DownloadNow() {
           <div className="mb-6 flex flex-col items-center">
             {/* modify later */}
             <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://your-app-link.com"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com/store/games?hl=en"
               alt="QR Code to download app"
               className="w-32 h-32 mb-2 bg-gray-200"
             />
@@ -37,7 +37,7 @@ export default function DownloadNow() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/"
+              href="https://play.google.com/store/games?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
@@ -50,7 +50,7 @@ export default function DownloadNow() {
             </Link>
 
             <Link
-              href="/"
+              href="https://www.apple.com/app-store/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
