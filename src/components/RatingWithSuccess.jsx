@@ -1,5 +1,8 @@
 import Image from "next/image";
 import image from "../assets/rating_review/ratings.png";
+import CHeading from "./CHeading";
+import CParagraph from "./CParagraph";
+import CSubHeading from "./CSubHeading";
 
 const testimonialsData = [
   {
@@ -44,29 +47,25 @@ const RatingStars = ({ rating }) => (
 
 export default function RatingWithSuccess() {
   return (
-    <div className="bg-gray-50 py-12 sm:py-20 font-sans">
-      <div className="max-w-4xl mx-auto px-4">
+    <div className="bg-gray-50 py-12 sm:py-20 font-mono">
+      <div className="max-w-3xl mx-auto px-4">
         <Image src={image} alt="rating_image" className="mb-8" />
+        <CHeading text="Hear success stories from our clients!!" />
 
-        {/* Title */}
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-10">
-          Hear success stories from <br />
-          our clients !!!
-        </h2>
-
-        <div className="space-y-6">
-          {testimonialsData.map((testimonial) => (
+        <div className="flex flex-col gap-4">
+          {testimonialsData?.map((testimonial) => (
             <div
               key={testimonial._id}
-              className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
+              className="
+                bg-white p-6 rounded-xl shadow-lg border border-gray-100 
+                transform transition duration-300 ease-in-out 
+                hover:shadow-2xl hover:scale-[1.02] hover:border-[#A50015]
+                cursor-pointer 
+              "
             >
-              <div className="mb-2">
-                <RatingStars rating={testimonial.rating} />
-              </div>
-              <h4 className="text-lg font-bold text-gray-800 mb-1">
-                {testimonial.name}
-              </h4>
-              <p className="text-sm text-gray-600">{testimonial.review}</p>
+              <RatingStars rating={testimonial.rating} />
+              <CSubHeading text={testimonial.name} />
+              <CParagraph text={testimonial.review} />
             </div>
           ))}
         </div>
