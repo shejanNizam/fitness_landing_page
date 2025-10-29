@@ -13,3 +13,6 @@ export default function Privacy() {
     </div>
   );
 }
+
+// const API_ENDPOINT =
+//   "https://thepeak.merinasib.shop/api/v1/dashboard/settings/content/privacy_policy";

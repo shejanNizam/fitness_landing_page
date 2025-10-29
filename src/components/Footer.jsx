@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
           <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex justify-center md:justify-start items-center space-x-2">
               <span className="text-3xl text-white">△</span>
               <CSubHeading text="THEPEAK" />
             </div>
@@ -56,11 +56,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-10 pt-6 border-t border-gray-700 text-center">
-          <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()}{" "}
-            <CParagraph text="THEPEAK. All rights reserved." />
-          </p>
+        <div className="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-500 flex justify-center items-center gap-2">
+          &copy; {new Date().getFullYear()}{" "}
+          <CParagraph text="THEPEAK. All rights reserved." />
         </div>
       </div>
     </footer>

@@ -13,3 +13,6 @@ export default function Terms() {
     </div>
   );
 }
+
+// const API_ENDPOINT =
+//   "https://thepeak.merinasib.shop/api/v1/dashboard/settings/content/terms_and_conditions";
