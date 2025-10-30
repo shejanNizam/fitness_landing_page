@@ -31,10 +31,9 @@ export default function Navbar({ getPlanRef }) {
           <button
             onClick={handleGetPlanClick}
             className={`
-              px-4 py-2 sm:px-6 sm:py-3 rounded-xl bg-red-600 text-white font-semibold text-sm sm:text-base 
+              px-4 py-2 sm:px-6 sm:py-3 rounded-xl bg-[#A50015] text-white font-semibold text-sm sm:text-base 
               transition-all duration-300 hover:bg-red-700 focus:outline-none focus:ring-4 
-              focus:ring-red-300 focus:ring-opacity-50 shadow-md 
-            
+              focus:ring-red-300 focus:ring-opacity-50 shadow-md            
             `}
           >
             Get My Plan

@@ -17,9 +17,12 @@ export default function Home() {
       <Navbar getPlanRef={personalPlanRef} />
       <PersonalPlanWithImproveArea />
       <ExpectImprove />
-      <GetPersonalPlan ref={personalPlanRef} />
+      <GetPersonalPlan
+        ref={personalPlanRef}
+        heading="Get your Personal Kegel Plan"
+      />
       <RatingWithSuccess />
-      <GetPersonalPlan />
+      <GetPersonalPlan heading="See the result in 4 weeks" />
       <RestorePurchase />
       <DownloadNow />
     </>

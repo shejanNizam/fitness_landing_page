@@ -63,7 +63,7 @@ export default function RatingWithSuccess() {
             className="w-[80%] h-[80%] mx-auto mb-4"
           />
         </div>
-        <CHeading text="Hear success stories from our clients!!" />
+        <CHeading text="Hear Success Stories From Our Customers" />
 
         <div className="flex flex-col gap-2">
           {testimonialsData?.map((testimonial) => (

@@ -128,18 +128,15 @@ function PlanCard({ plan, isSelected, onSelect }) {
 }
 
 const GetPersonalPlan = forwardRef((props, ref) => {
+  const { heading } = props;
   const [selectedPlan, setSelectedPlan] = useState("1month");
 
   const currentPlan = plans.find((p) => p.id === selectedPlan) || plans[1];
 
   return (
     <div ref={ref} className="flex flex-col items-center p-4 sm:p-8">
-      <CHeading
-        text="See the result in 4 weeks"
-        className="text-2xl font-extrabold text-black"
-      />
+      <CHeading text={heading} />
 
-      {/* Discount Ribbon/Gift Box Section */}
       <div className="w-full max-w-md bg-red-50 border border-red-300 rounded-lg p-3 my-4 flex justify-center items-center">
         <span className="text-2xl mr-3" role="img" aria-label="gift box">
           🎁
@@ -157,7 +154,6 @@ const GetPersonalPlan = forwardRef((props, ref) => {
       </div>
 
       <div className="w-full max-w-md mx-auto">
-        {/* Plan Cards */}
         {plans?.map((plan) => (
           <PlanCard
             key={plan.id}
@@ -167,7 +163,6 @@ const GetPersonalPlan = forwardRef((props, ref) => {
           />
         ))}
 
-        {/* 30-day money-back guarantee */}
         <div className="flex items-center justify-center my-4">
           <span className="text-[#A50015] mr-2">✔</span>
           <p className="text-sm font-medium text-gray-700">
@@ -175,7 +170,7 @@ const GetPersonalPlan = forwardRef((props, ref) => {
           </p>
         </div>
 
-        <button className="w-full py-4 bg-[#A50015] text-white font-bold text-xl rounded-xl shadow-lg hover:bg-red-900 transition-colors duration-200 cursor-pointer">
+        <button className="w-full py-4 bg-[#A50015] text-white font-bold text-xl rounded-xl shadow-lg hover:bg-red-900 transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-4 focus:ring-red-300 focus:ring-opacity-50">
           Get My Plan
         </button>
 
