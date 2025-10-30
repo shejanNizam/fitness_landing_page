@@ -10,11 +10,11 @@ export default function ExpectImprove() {
       <div className="text-center">
         <CParagraph text="Based on your data you can reach noticeable improvements" />
       </div>
-      <div className="text-center text-xl text-purple-500 font-medium mt-2">
+      <div className="text-center text-xl text-[#5773D6] font-medium mt-2">
         by November 27{" "}
-        <span className="bg-green-500 rounded-full px-2 py-1 text-white text-xs">
+        <span className="bg-green-500 rounded-full px-2 py-1 text-white text-xs inline-block shadow-sm animate-pulse transition-all duration-300">
           {" "}
-          34% faster{" "}
+          34% Faster{" "}
         </span>
       </div>
       <Image
