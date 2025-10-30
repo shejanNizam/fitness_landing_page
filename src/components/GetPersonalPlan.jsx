@@ -55,7 +55,7 @@ function PlanCard({ plan, isSelected, onSelect }) {
     >
       {/* MOST POPULAR label */}
       {plan.isPopular && (
-        <div className="absolute top-0 left-4 transform -translate-y-1/2 px-2 py-0.5 rounded-full text-white text-xs font-bold uppercase tracking-wider bg-red-500 border border-red-600">
+        <div className="absolute top-0 left-4 transform -translate-y-1/2 px-2 py-0.5 rounded-full text-white text-xs font-bold uppercase tracking-wider bg-[#A50015] border border-gray-600">
           MOST POPULAR
         </div>
       )}
@@ -64,10 +64,10 @@ function PlanCard({ plan, isSelected, onSelect }) {
         <div className="flex items-center space-x-3">
           <div
             className={`w-5 h-5 rounded-full border flex items-center justify-center transition-colors duration-200 
-              ${isSelected ? "border-red-600 bg-white" : "border-gray-400"}`}
+              ${isSelected ? "border-[#A50015] bg-white" : "border-gray-400"}`}
           >
             {isSelected && (
-              <div className="w-3 h-3 rounded-full bg-red-600"></div>
+              <div className="w-3 h-3 rounded-full bg-[#A50015]"></div>
             )}
           </div>
 
@@ -150,7 +150,7 @@ export default function GetPersonalPlan() {
           <span className="line-through font-extrabold">
             {currentPlan.previousPercentage}
           </span>{" "}
-          <span className="text-red-900 font-extrabold">
+          <span className="text-[#A50015] font-extrabold">
             {currentPlan.discountPercentage}
           </span>{" "}
           discount on your Kegel plan
@@ -170,13 +170,13 @@ export default function GetPersonalPlan() {
 
         {/* 30-day money-back guarantee */}
         <div className="flex items-center justify-center my-4">
-          <span className="text-red-600 mr-2">✔</span>
+          <span className="text-[#A50015] mr-2">✔</span>
           <p className="text-sm font-medium text-gray-700">
             **30-day money-back guarantee**
           </p>
         </div>
 
-        <button className="w-full py-4 bg-red-600 text-white font-bold text-xl rounded-xl shadow-lg hover:bg-red-700 transition-colors duration-200 cursor-pointer">
+        <button className="w-full py-4 bg-[#A50015] text-white font-bold text-xl rounded-xl shadow-lg hover:bg-red-900 transition-colors duration-200 cursor-pointer">
           Get My Plan
         </button>
 
