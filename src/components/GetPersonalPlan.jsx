@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import CHeading from "./CHeading";
 
 const plans = [
@@ -127,14 +127,13 @@ function PlanCard({ plan, isSelected, onSelect }) {
   );
 }
 
-export default function GetPersonalPlan() {
+const GetPersonalPlan = forwardRef((props, ref) => {
   const [selectedPlan, setSelectedPlan] = useState("1month");
 
   const currentPlan = plans.find((p) => p.id === selectedPlan) || plans[1];
 
   return (
-    <div className="flex flex-col items-center p-4 sm:p-8">
-      {/* Main Heading */}
+    <div ref={ref} className="flex flex-col items-center p-4 sm:p-8">
       <CHeading
         text="See the result in 4 weeks"
         className="text-2xl font-extrabold text-black"
@@ -215,4 +214,8 @@ export default function GetPersonalPlan() {
       </div>
     </div>
   );
-}
+});
+
+GetPersonalPlan.displayName = "GetPersonalPlan";
+
+export default GetPersonalPlan;
