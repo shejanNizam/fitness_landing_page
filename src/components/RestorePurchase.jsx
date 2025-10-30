@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import image from "../assets/restore/restore.png";
+import CHeading from "./CHeading";
 import CParagraph from "./CParagraph";
 import CSubHeading from "./CSubHeading";
 
@@ -14,9 +16,26 @@ export default function RestorePurchase() {
         />
       </div>
       <div className="my-2">
-        <CSubHeading text="Restore Purchase" />
+        <CHeading text="30-Day Money-Back" />
+        <CSubHeading text="Guarantee Without Questions" />
       </div>
-      <CParagraph text="The price of 1-year subscription $59.88. Account will be charged for renewal within 24 hours prior to the end of the current subscription period, the cost of the renewal will be indicated. The subscriptions renews automatically at the end of each period, until you cancel. The payment will be charged iTunes account at confirmation of purchase. To avoid being charged, cancel the subscription in your iTunes and App store/Apple ID account settings at least 24 hours before the end of the current subscription period. If you are unsure how to cancel a subscription, please visit the apple support website. Note that deleting the app does not cancel the subscription." />
+      <div className="md:w-[80%] mx-auto">
+        <CParagraph
+          text={[
+            "We're confident that our Kegel Plan will work for you and that you can achieve noticeable improvements in a few weeks! We're so confident that we're even ready to return your money without any questions if you don't see noticeable improvements. All you need is to send an email to ",
+            <span className="font-semibold text-lg">
+              contact@kegel-plan.com
+            </span>,
+            " within 30 days and ask for a refund. But we're sure that the Kegel Plan will show it's efficacy and there will be no need for a refund. You can find more about the refund process in our ",
+            <Link
+              href={`/privacy`}
+              className="font-bold text-blue-800 cursor-pointer underline"
+            >
+              Privacy Policy.
+            </Link>,
+          ]}
+        />
+      </div>
     </div>
   );
 }
