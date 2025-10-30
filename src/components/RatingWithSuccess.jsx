@@ -7,33 +7,40 @@ import CSubHeading from "./CSubHeading";
 const testimonialsData = [
   {
     _id: "t1",
-    name: "David",
+    name: "Few weeks in",
     rating: 5,
     review:
-      "The app has a clean and intuitive design, making it easy to navigate through different exercises and routines. I appreciate how simple it is to track progress and set goals.",
+      "I was very skeptical at first. Seems like yeah yeah yeah but nothing works. I started having problems about 1 yr ago. I bought supplements, but never worked. So I came across this ad on my feed. What the heck let me try it. Even though it would cost some money. I’ve wasted money before. So I decided to try it. I will say I noticed a difference in about 2 weeks. So I was excited about the results in the future. I’ve now doing the exercises for 72 days straight. WOW I wake up like I’m in my twenties. Standing at attention, bigger, stronger than in years. I definitely would recommend this plan to everyone. Just remember be committed to doing the exercise as I am. I guarantee you’ll see results and you’ll be tremendously happy.",
   },
   {
     _id: "t2",
-    name: "Thomas",
+    name: "Excellent",
     rating: 5,
-    review: "Literally changed my life.",
+    review: "Literally changed my life!",
   },
   {
     _id: "t3",
-    name: "Vanni",
+    name: "Few weeks in",
     rating: 5,
     review:
-      "I am a few weeks in and I can already tell there better blood flow and less tempration to ejaculate early.",
+      "I’m a few weeks in and I can already tell there’s better blood flow and less temptation to ejaculate early.",
   },
 ];
 
-const StarIcon = ({ fill = true }) => (
+const StarIcon = () => (
   <svg
-    className={`w-4 h-4 ${fill ? "text-yellow-500" : "text-gray-300"}`}
-    fill="currentColor"
-    viewBox="0 0 20 20"
+    data-v-08248647=""
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.167c.969 0 1.371 1.24.588 1.81l-3.36 2.446a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.36-2.446a1 1 0 00-1.176 0l-3.36 2.446c-.784.57-1.84-.197-1.54-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.24 9.384c-.783-.57-.381-1.81.588-1.81h4.167a1 1 0 00.95-.69l1.286-3.957z" />
+    <rect width="16" height="16" fill="#1DB87F"></rect>
+    <path
+      d="M7.99779 2.17969L9.30404 6.19995H13.5311L10.1113 8.68461L11.4176 12.7049L7.99779 10.2202L4.578 12.7049L5.88424 8.68461L2.46445 6.19995H6.69155L7.99779 2.17969Z"
+      fill="white"
+    ></path>
   </svg>
 );
 
@@ -49,18 +56,21 @@ export default function RatingWithSuccess() {
   return (
     <div className="bg-gray-50 py-12 sm:py-20 ">
       <div className="max-w-3xl mx-auto px-4">
-        <Image src={image} alt="rating_image" className="mb-8" />
+        <div className="text-center">
+          <Image
+            src={image}
+            alt="rating_image"
+            className="w-[80%] h-[80%] mx-auto mb-4"
+          />
+        </div>
         <CHeading text="Hear success stories from our clients!!" />
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
           {testimonialsData?.map((testimonial) => (
             <div
               key={testimonial._id}
               className="
-                bg-white p-6 rounded-xl shadow-lg border border-gray-100 
-                transform transition duration-300 ease-in-out 
-                hover:shadow-2xl hover:scale-[1.02] hover:border-[#A50015]
-                cursor-pointer 
+                bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex flex-col gap-2
               "
             >
               <RatingStars rating={testimonial.rating} />
