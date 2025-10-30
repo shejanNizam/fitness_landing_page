@@ -1,25 +1,26 @@
 import Image from "next/image";
-import imageTwo from "../assets/personal_plan/after_perfomance.png";
-import imageOne from "../assets/personal_plan/before_perfomance.png";
+// import imageTwo from "../assets/personal_plan/after_perfomance.png";
+// import imageOne from "../assets/personal_plan/before_perfomance.png";
+import image from "../assets/personal_plan/personal_plan.png";
 import CHeading from "./CHeading";
 import CSubHeading from "./CSubHeading";
 
-const performanceData = [
-  {
-    _id: "before",
-    title: "Performance before plan",
-    design: "bg-red-500",
-    image: imageOne,
-    alt: "Man sitting sadly on a bed before the plan",
-  },
-  {
-    _id: "after",
-    title: "Performance after plan",
-    design: "bg-green-500",
-    image: imageTwo,
-    alt: "Man celebrating with hands up on a bed after the plan",
-  },
-];
+// const performanceData = [
+//   {
+//     _id: "before",
+//     title: "Performance before plan",
+//     design: "bg-red-500",
+//     image: imageOne,
+//     alt: "Man sitting sadly on a bed before the plan",
+//   },
+//   {
+//     _id: "after",
+//     title: "Performance after plan",
+//     design: "bg-green-500",
+//     image: imageTwo,
+//     alt: "Man celebrating with hands up on a bed after the plan",
+//   },
+// ];
 
 const improvementAreas = [
   {
@@ -51,11 +52,11 @@ const improvementAreas = [
 
 export default function PersonalPlanWithImproveArea() {
   return (
-    <div className="flex flex-col items-center p-4 sm:p-8 bg-white font-sans">
-      <CHeading text="Your personal plan is ready" />
+    <div className="flex flex-col items-center p-4 sm:p-8 bg-white">
+      <CHeading text="Your Personal Plan is Ready!" />
 
-      <div className="flex flex-col lg:flex-row gap-6 w-full max-w-3xl mb-12">
-        {performanceData?.map((item) => (
+      <div className="flex flex-col lg:flex-row gap-6 w-full max-w-3xl mb-12 mx-auto">
+        {/* {performanceData?.map((item) => (
           <div
             key={item._id}
             className="flex-1 rounded-lg shadow-xl overflow-hidden bg-gray-50"
@@ -82,7 +83,13 @@ export default function PersonalPlanWithImproveArea() {
               </div>
             </div>
           </div>
-        ))}
+        ))} */}
+        {/* <Image src={image} alt="personal_plan_image" /> */}
+        <Image
+          src={image}
+          alt="personal_plan_image"
+          className="w-[80%] h-[80%] mx-auto my-4"
+        />
       </div>
 
       <div className="w-full max-w-4xl border-t border-gray-200 my-4"></div>

@@ -65,7 +65,7 @@ export default function GetPersonalPlan() {
   return (
     <div className="flex flex-col items-center bg-gray-50 p-4 sm:p-8">
       <CHeading text="Get your personal plan..." />
-      <div className="md:w-[60%] xl:w-[40%] mx-auto my-2">
+      <div className="md:w-[60%] xl:w-[40%] mx-auto text-center my-2">
         <CParagraph
           text="A subscription plan offers access to exclusive features or services for
         a set period. By purchasing a plan, users can enjoy continuous benefits,

@@ -47,7 +47,7 @@ const RatingStars = ({ rating }) => (
 
 export default function RatingWithSuccess() {
   return (
-    <div className="bg-gray-50 py-12 sm:py-20 font-mono">
+    <div className="bg-gray-50 py-12 sm:py-20 ">
       <div className="max-w-3xl mx-auto px-4">
         <Image src={image} alt="rating_image" className="mb-8" />
         <CHeading text="Hear success stories from our clients!!" />
