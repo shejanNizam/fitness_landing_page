@@ -169,7 +169,7 @@ const GetPersonalPlan = forwardRef((props, ref) => {
 
   const currentPlan =
     plans.find((p) => p.id === selectedPlan) || plans[0] || {};
-  console.log(currentPlan.name);
+  // console.log(currentPlan.name);
 
   const currentApiPlan = apiPlans.find((p) => {
     let id;
@@ -192,9 +192,10 @@ const GetPersonalPlan = forwardRef((props, ref) => {
   }; // Function to handle form submission (POST API call)
 
   const handleFormSubmit = async (values) => {
+    console.log(values);
     const { email } = values;
     const planName = currentPlan.name;
-    console.log(email);
+    // console.log(email);
 
     if (!planName) {
       message.error("Selected plan is invalid. Please try again.");
@@ -226,7 +227,8 @@ const GetPersonalPlan = forwardRef((props, ref) => {
       }
 
       const jsonData = await response.json();
-      const checkoutUrl = jsonData.url; // Assuming the URL is in the 'url' field
+      console.log(jsonData);
+      const checkoutUrl = jsonData?.data?.checkoutUrl;
 
       if (checkoutUrl) {
         // Navigate to the checkout URL
@@ -363,15 +365,15 @@ const GetPersonalPlan = forwardRef((props, ref) => {
           <Form.Item
             label="Email"
             name="email"
-            // rules={[
-            //   { required: true, message: "Please input your email address!" },
-            //   {
-            //     type: "email",
-            //     message: "The input is not a valid email address!",
-            //   },
-            // ]}
+            rules={[
+              { required: true, message: "Please input your email address!" },
+              {
+                type: "email",
+                message: "The input is not a valid email address!",
+              },
+            ]}
           >
-            <Input placeholder="Enter your email address" />{" "}
+            <Input placeholder="Enter your email address" />
           </Form.Item>
           {/* Submit Button */}{" "}
           <Form.Item>
